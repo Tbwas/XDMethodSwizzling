@@ -11,5 +11,5 @@ Encapsulate method to exchange instance-method's implementation and class-method
   pod 'XDMethodSwizzling'
   end
 ```
-If there is a `Unable to find a pod with name, author, summary, or description matching...` error when you execute `pod search XDMethodSwizzling` command, please try to execute `rm ~/Library/Caches/CocoaPods/search_index.json` command firstly, and then execute `pod search XDProgressView` command.
+If there is a `Unable to find a pod with name, author, summary, or description matching...` error when you execute `pod search XDMethodSwizzling` command, please try to execute `rm ~/Library/Caches/CocoaPods/search_index.json` command firstly, and then execute `pod search XDMethodSwizzling` command.
 
