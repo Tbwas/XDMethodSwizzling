@@ -18,7 +18,7 @@
     
     BOOL isAdd = class_addMethod(realClass, selectorOrigin, impNew, method_getTypeEncoding(methodNew));
     if (isAdd) {
-        class_addMethod(realClass, selectorNew, impOrigin, method_getTypeEncoding(methodOrigin));
+        class_replaceMethod(realClass, selectorNew, impOrigin, method_getTypeEncoding(methodOrigin));
     } else {
         method_exchangeImplementations(methodOrigin, methodNew);
     }
@@ -31,8 +31,7 @@
     BOOL condition = originSelector && newSelector && currentClass;
     NSAssert(condition, @"the selectors and currentClass cann't be nil.");
     
-    Class realClass = object_getClass(currentClass);
-    
+    Class realClass = currentClass;
     Method methodOrigin = class_getInstanceMethod(realClass, originSelector);
     Method methodNew = class_getInstanceMethod(realClass, newSelector);
     
